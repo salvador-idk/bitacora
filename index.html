@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <title>BITACORA</title>
+
+  <style media="screen">
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+    * {
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    /*===== VAR-CSS =====*/
+    :root {
+
+      --body-font: 'Roboto';
+      --first-color: #ffffff;
+    }
+
+    /*=====BODY=====*/
+    /*style for body*/
+    body {
+      margin: 0;
+      padding: 1px;
+      overflow: scroll;
+      background: #111;
+      background-repeat: no-repeat;
+    }
+
+    /*style for h2 tag*/
+    h2 {
+      padding-top: 10px;
+      font-family: var(--body-font);
+      color: var(--first-color);
+    }
+
+    /*style for h3 tag*/
+    h3 {
+      padding-top: 10px;
+      font-family: var(--body-font);
+      color: var(--first-color);
+    }
+
+    /*style for h4 tag*/
+    h4 {
+      font-family: var(--body-font);
+      color: var(--first-color);
+    }
+
+    /*style for p tag*/
+    p {
+      font-size: 16px;
+      font-family: var(--body-font);
+    }
+
+    /*style for label checkbox*/
+    label {
+      font-size: 18px;
+      font-weight: bold;
+      color: var(--first-color);
+      cursor: pointer;
+    }
+
+    /*=====CONTAINER=====*/
+    /*SignupSection its like a container*/
+
+    .signupSection {
+      background-color: #39666f;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+    }
+
+    /*=====LEFT-SIDE=====*/
+    /*Style for the left side of the form*/
+    .info {
+      width: 30%;
+      background: rgba(20, 20, 20, .8);
+      padding: 30px 0;
+      border-right: 5px solid rgba(30, 30, 30, .8);
+      color: #ffffff;
+    }
+
+    /*=====ICON=====*/
+    /*style for the icon on the left side of the page*/
+    .icon {
+      font-size: 8em;
+      padding: 20px 0;
+      color: rgba(10, 180, 180, 1);
+    }
+
+    /*=====RIGHT-SIDE=====*/
+    /*style for the right side of the form*/
+    .signupForm {
+      width: 100%;
+      background: rgba(20, 40, 40, .8);
+    }
+
+    /*=====INPUT=====*/
+
+    /*class used by element type text*/
+    .inputFields {
+      margin: 15px 0;
+      font-size: 12px;
+      padding: 5px;
+      margin: 10px;
+      width: 210px;
+      border: 1px solid rgba(10, 180, 180, 1);
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      background: rgba(20, 20, 20, .2);
+      color: #ffffff;
+      outline: none;
+
+    }
+
+    /*Erase bullet point (list)*/
+    .noBullet {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    /*=====BUTTON=====*/
+
+    /*style for both buttons*/
+    #join-btn {
+      border: 1px solid rgba(10, 180, 180, 1);
+      background: rgba(20, 20, 20, .6);
+      font-size: 18px;
+      color: #ffffff;
+      margin-top: 10px;
+      padding: 10px 30px;
+      cursor: pointer;
+      transition: .4s;
+    }
+
+    /*style for button's event hover*/
+    #join-btn:hover {
+      background: rgba(20, 20, 20, .8);
+      padding: 15px 60px;
+      /*increases button's padding/size*/
+    }
+
+    /*=====TIME=====*/
+    /*style*/
+    input[type="time"] {
+      background: rgba(20, 20, 20, .2);
+      border: 1px solid rgba(10, 180, 180, 1);
+      padding: 5px;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      width: 210px;
+      margin: 15px 0;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    input[type="date"] {
+      cursor: pointer;
+    }
+
+    /*=====TEXTAREA=====*/
+    textarea {
+      align: center;
+      overflow: scroll;
+      resize: both;
+      padding: 10px 0;
+      margin: 10px;
+      width: 100%;
+      height: 100px;
+    }
+
+    /*=====IMG=====*/
+    /*style for image make img responsive*/
+    img {
+      width: 100%;
+    }
+
+    /*=====CHECKBOX-STYLE=====*/
+    input[type="checkbox"] {
+      appearance: none;
+      -webkit-appearance: none;
+      height: 18px;
+      width: 18px;
+      background-color: #d5d5d5;
+      border-radius: 5px;
+      cursor: pointer;
+      display:inline-block ;
+      outline: none;
+    }
+
+    input[type="checkbox"]::after {
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      content: "\f00c";
+      color: white;
+      size: 20px;
+      display: none;
+    }
+
+    input[type="checkbox"]:hover {
+      background-color: #a5a5a5;
+    }
+
+    input[type="checkbox"]:checked {
+      background-color: rgb(185, 121, 24);
+    }
+
+    input[type="checkbox"]:checked::after {
+      display:inline-block;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="signupSection">
+
+    <div class="info">
+      <h2>Secretaria de Seguridad P&uacuteblica</h2>
+      <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+
+      <img src="PCE.png">
+      <br><br>
+      <h3>Polic&iacutea Cibern&eacutetica del Estado</h3>
+
+      <br><br><br><br>
+      <a href="../Departamentos.html" id="center-btn">
+        <input type="button" id="join-btn" value="Salir" onClick="llamarApiPOST()" />
+      </a>
+
+      <br>
+    </div>
+    <div class="signupform">
+      <h3>Bit&aacutecora</h3>
+
+      <ul class="noBullet">
+        <li hidden>
+          <label for="Folio"></label>
+          <input type="text" class="inputFields" id="ID" name="ID" placeholder="ID" value="1" readonly>
+        </li>
+        <h4>Fecha Inicio</h4>
+        <li>
+          <input type="date" id="FECHA" name="FECHA" class="inputFields" placeholder="Fecha">
+        </li>
+        <li>
+          <input type="time" name="Hr" id="Hr" class="inputfields" placeholder="Ingresar Hora">
+        </li>
+        <li>
+          <input type="text" id="folioPce" name="folioPce" class="inputFields" placeholder="folio Pce" required></input>
+        </li>
+        <li>
+          <input type="text" id="folio911" name="folio911" class="inputFields" placeholder="folio 911"></input>
+        </li>
+        <li>
+          <h4>
+            <p>Facebook</p>
+          </h4>
+          <label for="facebook">Si</label>
+          <input type="radio" name="face" id="face" value="si" onchange="seleccion(1)">
+
+          <label for="facebookNo">No</label>
+          <input type="radio" name="face" id="face" value="No" onchange="seleccion(2)">
+        </li>
+        <li>
+          <input type="text" name="atendio" id="atendio" class="inputFields" value="Yeimi Anahí" placeholder="" readonly>
+        </li>
+        <li>
+          <select name="municipio">
+            <option value="0">Selecciona Municipio</option>
+            <option value="1">Abasolo</option>
+            <option value="2">Acuña</option>
+            <option value="3">Allende</option>
+            <option value="4">Arteaga</option>
+            <option value="5">Candela</option>
+            <option value="6">Castaños</option>
+            <option value="7">Cuatro ciénegas</option>
+            <option value="8">Escobedo</option>
+            <option value="9">Francisco I. Madero</option>
+            <option value="10">Frontera</option>
+            <option value="11">General Cepeda</option>
+            <option value="12">Guerrero</option>
+            <option value="13">Hidalgo</option>
+            <option value="14">Jiménez</option>
+            <option value="15">Juárez</option>
+            <option value="16">Lamadrid</option>
+            <option value="17">Matamoros</option>
+            <option value="18">Monclova</option>
+            <option value="19">Morelos</option>
+            <option value="20">Múzquiz</option>
+            <option value="21">Nadadores</option>
+            <option value="22">Nava</option>
+            <option value="23">Ocampo</option>
+            <option value="24">Parras</option>
+            <option value="25">Piedras Negras</option>
+            <option value="26">Progreso</option>
+            <option value="27">Ramos Arizpe</option>
+            <option value="28">Sabinas</option>
+            <option value="29">Sacramento</option>
+            <option value="30">Saltillo</option>
+            <option value="31">San Buenaventura</option>
+            <option value="32">San Juan de Sabinas</option>
+            <option value="33">San Pedro</option>
+            <option value="34">Sierra Mojada</option>
+            <option value="35">Torreón</option>
+            <option value="36">Viesca</option>
+            <option value="37">Villa Unión</option>
+            <option value="38">Zaragoza</option>
+            <label for="otro">Otros</label>
+            <input type="otro" name="otro" id="otro" placeholder="Otro" class="inputFields">
+          </select>
+        </li>
+        <select name="incidente">
+          <option value="1">Seleccione Incidente</option>
+          <option value="2">Ciberextorsion</option>
+          <option value="3">Ciberfraude</option>
+        </select>
+        <li>
+          <input type="afectado" id="afectado" placeholder="Nombre de afectado" class="inputFields">
+        </li>
+        <li>
+          <input type="number" name="telVictima" id="telVictima" placeholder="Telefono Victima/Lada" class="inputFields">
+        </li>
+        <li>
+          <input type="number" name="telExtorsion" id="telExtorsion" placeholder="Telefono de Extorcion" class="inputFields">
+        </li>
+        <li>
+          <input type="text" name="ctaDep" id="ctaDep" placeholder="Cuenta Deposito" class="inputFields">
+        </li>
+        <li>
+          <input type="text" name="Monto" id="Monto" placeholder="Monto" class="inputFields">
+        </li>
+
+        <li>
+          <input type="checkbox" name="" value="">
+          <label for="">Atendido</label>
+        </li>
+
+        <li>
+          <select class="" name="Se_Atendio">
+            <option value="0">Seleccione Tipo Atención</option>
+            <option value="1">Llamada Telefónica</option>
+            <option value="2">WhatsApp</option>
+          </select>
+        </li>
+
+        <li>
+          <textarea type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" class=""></textarea>
+        </li>
+
+        <li>
+          <textarea name="resultados" id="resultados" placeholder="Resultados" class=""></textarea>
+        </li>
+
+        <li id="center-btn">
+          <input type="submit" name="join" id="join-btn" value="Guardar" onClick="llamarApiPOST()" />
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+</body>
+
+</html>
