@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC>
+
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <title>Bitacora PCE</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!--linking style-->
+  <link rel="stylesheet" href="Style_v2.css">
+  
+  <style>
+        #ultimo + div{
+            visibility: hidden;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        function seleccion(valor){
+            if (valor==1){
+                $("#anuario").val("facebook")
+            }
+            else{
+                $("#anuario").val("instagram")
+            }
+            
+        }
+
+        function enviarDatos() {
+            datos = {
+                'atendio': $("#atendio").val(),
+                'telefono': $("#telefono").val(),
+                'descripcion': $("#descripcion").val(),
+                'fecha': $("#fecha").val(),
+                'hora': $("#hora").val(),
+                'folioPce': $("#folioPce").val(),
+                'llamemergencia': $("#llamemergencia").val(),
+                'anuario': $("#anuario").val(),
+                'afectado': $("#afectado").val(),
+                'nickname': $("#nickname").val(),
+                'municipio': $("#municipio").val(),
+                'otro': $("#otro").val(),
+                'incidente': $("#incidente").val(),
+                'telvictima': $("#telvictima").val(),
+                'telextorsion': $("#telextorsion").val(),
+                'ctadep': $("#ctadep").val(),
+                'monto': $("#monto").val(),
+                'resultados': $("#resultados").val(),
+            }
+            $.ajax({
+                url: "conexion.php",
+                type: "post",
+                data: datos,
+                success: function (respuesta) {
+                    alert(respuesta)
+                    $("#telefono").val("")
+                    $("#fecha").val("")
+                    $("#hora").val("")
+                    $("#folioPce").val("")
+                    $("#descripcion").val("")
+                    $("#llamemergencia").val("")
+                    $("#anuario").val("")
+                    $("#afectado").val("")
+                    $("#nickname").val("")
+                    $("#municipio").val("")
+                    $("#otro").val("")
+                    $("#incidente").val("")
+                    $("#telvictima").val("")
+                    $("#telextorsion").val("")
+                    $("#ctadep").val("")
+                    $("#monto").val("")
+                    $("#resultados").val("")
+                }
+            })
+        }
+    </script>
+</head>
+
+<body>
+
+  <form action="conexion.php" method="post">
+
+    <div class="signupSection">
+
+      <div class="info">
+        <h2>Secretaria de Seguridad P&uacuteblica</h2>
+        <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+
+        <img src="img/PCE.png">
+        <br><br><br>
+        <p>Polic&iacutea Cibern&eacutetica del Estado</p>
+
+        <br><br><br><br>
+        <a href="index.html" id="center-btn">
+          <input type="button" class="join-btn" value="Salir" onClick="llamarApiPOST()" />
+        </a>
+
+        <br>
+      </div>
+      <div class="signupform">
+        <font size="+1">Bitácora</font>
+
+        <ul class="noBullet">
+          <div>
+            <label for="Folio"></label>
+            <input type="text" class="inputFields" id="ID" name="ID" placeholder="ID" value="1" readonly hidden>
+
+          </div>
+
+          <li>
+            <input type="text" name="atendio" id="atendio" class="inputfields" value="Prueba" readonly>
+          </li><br>
+
+          <font size="-1"> Fecha </font>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+          &emsp;&emsp;<font size="-1"> Hora </font>
+          <li>
+            <input type="date" id="fecha" name="fecha" class="inputFields" placeholder="Fecha" required>
+            &emsp;
+            <input type="time" name="hora" id="hora" class="inputfields" placeholder="Ingresar Hora" required>
+          </li>
+
+
+          <li>
+            <input type="text" id="folioPce" class="inputFields" placeholder="folio Pce" readonly hidden></input>
+            &emsp;
+            <input type="text" id="llamemergencia" name="llamemergencia" class="inputFields" placeholder="folio 911"></input>
+          </li>
+
+
+          <li>
+              
+              <h3>
+              <p>Red Social</p>
+            </h3>
+
+            <label>facebook</label>
+            <input type="radio" name="anuario" value="facebook" onchange="seleccion(1)" required>
+            &emsp;
+            <label>instagram</label>
+            <input type="radio" name="anuario" value="instagram" onchange="seleccion(2)">
+            <input type="hidden" value="No" id="anuario">
+
+
+             
+            <!--
+            <h3>Reportes</h3>
+            
+            <label>Denuncia Telefonica</label>
+            <input type="radio" name="anuario" value="folio" onchange="seleccion(1)" requiered>
+            
+            <label>Facebook</label>
+            <input type="radio" name="anuario" value="face" onchange="seleccion(2)">
+            
+            <label>Instagram</label>
+            <input type="radio" name="anuario" value="insta" onchange="seleccion(3)">
+            -->
+            
+          </li><br>
+
+
+
+          <li>
+            <input type="text" name="afectado" id="afectado" placeholder="Nombre de afectado" class="inputfields" required>
+            <input type="text" name="nickname" id="nickname" placeholder="Nombre de perfil" class="inputfields" >
+          </li>
+
+          <!--  <li>
+            <input type="text" name="estado" id="estado" class="inputfields" placeholder="Estado">
+          </li>-->
+          <li>
+            <select name="municipio" id="municipio" required>
+              <option value="0">Municipios de coahuila</option>
+              <option value="Abasolo">Abasolo</option>
+              <option value="Acuña">Acuña</option>
+              <option value="Allende">Allende</option>
+              <option value="Arteaga">Arteaga</option>
+              <option value="Candela">Candela</option>
+              <option value="Castaños">Castaños</option>
+              <option value="Cuatro ciénegas">Cuatro ciénegas</option>
+              <option value="Escobedo">Escobedo</option>
+              <option value="Francisco I. Madero">Francisco I. Madero</option>
+              <option value="Frontera">Frontera</option>
+              <option value="General Cepeda">General Cepeda</option>
+              <option value="Guerrero">Guerrero</option>
+              <option value="Hidalgo">Hidalgo</option>
+              <option value="Jiménez">Jiménez</option>
+              <option value="Juárez">Juárez</option>
+              <option value="Lamadrid">Lamadrid</option>
+              <option value="Matamoros">Matamoros</option>
+              <option value="Monclova">Monclova</option>
+              <option value="Morelos">Morelos</option>
+              <option value="Múzquiz">Múzquiz</option>
+              <option value="Nadadores">Nadadores</option>
+              <option value="Nava">Nava</option>
+              <option value="Ocampo">Ocampo</option>
+              <option value="Parras">Parras</option>
+              <option value="Piedras Negras">Piedras Negras</option>
+              <option value="2Progreso6">Progreso</option>
+              <option value="Ramos Arizpe">Ramos Arizpe</option>
+              <option value="Sabinas">Sabinas</option>
+              <option value="Sacramento">Sacramento</option>
+              <option value="Saltillo">Saltillo</option>
+              <option value="Buenaventura">San Buenaventura</option>
+              <option value="San Juan de Sabina">San Juan de Sabinas</option>
+              <option value="San Pedro">San Pedro</option>
+              <option value="Sierra Mojada">Sierra Mojada</option>
+              <option value="Torreón">Torreón</option>
+              <option value="Viesca">Viesca</option>
+              <option value="Villa Unión">Villa Unión</option>
+              <option value="Zaragoza">Zaragoza</option>
+              <label for="otro">Otros</label>
+
+              <input type="otro" name="otro" id="otro" placeholder="Otra entidad federativa" class="inputfields">
+            </select>
+
+
+
+            <select name="incidente" id="incidente" required>
+              <option value="1">Seleccione Incidente</option>
+              <option value="Ciberextorsion">Ciberextorsion</option>
+              <option value="Ciberfraude">Ciberfraude</option>
+              <option value="Extorsión Telefonica">Extorsión Telefonica</option>
+              <option value="Ciber Acoso">Ciber Acoso</option>
+              <option value="Asesoria">Asesoria</option>
+              <option value="Amenaza">Amenaza</option>
+              <option value="Usurpación de identidad">Usurpación de identidad</option>
+              <option value="Ciber Incidente">Ciber Incidente</option>
+              <option value="Acoso">Acoso</option>
+              <option value="Robo de Identidad">Robo de Identidad</option>
+              <option value="Divulgacion de contenido">Divulgacion de contenido</option>
+              <option value="Secuestro virtual">Secuestro virtual</option>
+              <option value="Extorsion Telefonica">Extorsion Telefonica</option>
+              <option value="Hackeo de  cuenta">Hackeo de cuenta</option>
+              <option value="Estafa">Estafa</option>
+              <option value="Fraude">Fraude</option>
+              <option value="Reporte">Reporte</option>
+              <option value="Suplantacion de Identidad">Suplantacion de Identidad</option>
+              <option value="Riña">Riña</option>
+              <option value="Abuso Sexual">Abuso Sexual</option>
+              <option value="Clonacion de tarjeta">Clonacion de tarjeta</option>
+              <option value="Hostigamiento">Hostigamiento</option>
+              <option value="Pornografia infantil">Pornografia infantil</option>
+              <option value="Supuesta privacion de libertad">Supuesta privacion de libertad</option>
+              <option value="Acoso ( MENOR DE EDAD)">Acoso ( MENOR DE EDAD)</option>
+              <option value="Entrevista">Entrevista</option>
+              <option value="Abuso de confianza">Abuso de confianza</option>
+              <option value="Robo de identidad">Robo de identidad</option>
+              <option value="Suplantacion de identidad">Suplantación de identidad</option>
+              <option value="Usurpacion de identidad">Usurpación de identidad</option>
+
+
+            </select>
+          </li>
+
+
+          <li>
+            <input type="number" name="telvictima" id="telvictima" placeholder="Telefono Victima / Lada" class="inputfields" required>
+            &emsp;
+            <input type="number" name="telextorsion" id="telextorsion" placeholder="Telefono de Extorcion" class="inputfields">
+          </li>
+
+
+          <li>
+            <input type="text" name="ctadep" id="ctadep" placeholder="Cuenta Deposito" class="inputfields">
+            &emsp;
+            <input type="text" name="monto" id="monto" placeholder="Monto" class="inputfields">
+          </li>
+
+          <li>
+            <textarea type="descripcion" name="descripcion" id="descripcion" cols="30" rows="10" placeholder="Descripción" class="inputfields" required></textarea>
+            <textarea name="resultados" id="resultados" cols="30" rows="10" placeholder="Resultados" class="inputfields" required></textarea>
+          </li>
+
+  </form>
+  <!--
+  <li id="center-btn">
+    <input type="submit" name="guardar" id="join-btn" value="Guardar">
+  </li>
+-->
+  <input type="button" class="join-btn" onclick="enviarDatos()" value="Guardar"></input>
+  
+
+
+  </ul>
+  </div>
+  </div>
+
+
+  <style>
+    body {
+      overflow: scroll;
+      /* Show horizontal scrollbar */
+    }
+  </style>
+
+ <div id="ultimo"></div>
+
+</body>
+
+</html>
