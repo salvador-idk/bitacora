@@ -1,209 +1,233 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300);
-    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-    * {
-      font-family: 'Open Sans', sans-serif;
-    }
+* {
+  font-family: 'Open Sans', sans-serif;
+}
 
-    /*===== VAR-CSS =====*/
-    :root {
+/*===== VAR-CSS =====*/
+:root {
+  --body-font: 'Roboto';
+  --first-color: #FFFFFF;
+}
 
-      --body-font: 'Roboto';
-      --first-color: #ffffff;
-    }
+/*=====BODY=====*/
+/*style for body*/
+body {
+  margin: 0;
+  padding: 1px;
+  overflow: scroll;
+  background: #111;
+  background-repeat: no-repeat;
+}
 
-    /*=====BODY=====*/
-    /*style for body*/
-    body {
-      margin: 0;
-      padding: 1px;
-      overflow: scroll;
-      background: #111;
-      background-repeat: no-repeat;
-    }
+/*style for h2 tag*/
+h2 {
+  padding-top: 10px;
+  font-family: var(--body-font);
+  color: var(--first-color);
+}
 
-    /*style for h2 tag*/
-    h2 {
-      padding-top: 10px;
-      font-family: var(--body-font);
-      color: var(--first-color);
-    }
+/*style for h3 tag*/
+h3 {
+  padding-top: 10px;
+  font-family: var(--body-font);
+  color: var(--first-color);
+}
 
-    /*style for h3 tag*/
-    h3 {
-      padding-top: 10px;
-      font-family: var(--body-font);
-      color: var(--first-color);
-    }
+/*style for h4 tag*/
+h4 {
+  padding-top: 10px;
+  font-family: var(--body-font);
+  color: var(--first-color);
+}
 
-    /*style for h4 tag*/
-    h4 {
-      font-family: var(--body-font);
-      color: var(--first-color);
-    }
+/*style for p tag*/
+p {
+  font-size: 16px;
+  font-family: var(--body-font);
+}
 
-    /*style for p tag*/
-    p {
-      font-size: 16px;
-      font-family: var(--body-font);
-    }
+/*style for label checkbox*/
+label {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--first-color);
+  cursor: pointer;
+}
 
-    /*style for label checkbox*/
-    label {
-      font-size: 18px;
-      font-weight: bold;
-      color: var(--first-color);
-      cursor: pointer;
-    }
+font {
+  color: var(--first-color);
+}
 
-    /*=====CONTAINER=====*/
-    /*SignupSection its like a container*/
+/*=====CONTAINER=====*/
+/*SignupSection its like a container*/
+.signupSection {
+  background-color: #39666f;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
+}
 
-    .signupSection {
-      background-color: #39666f;
-      width: 100%;
-      text-align: center;
-      display: flex;
-      box-shadow: 3px 10px 20px 5px rgba(0, 0, 0, .5);
-    }
+/*=====LEFT-SIDE=====*/
+/*Style for the left side of the form*/
+.info {
+  width: 30%;
+  background: rgba(20, 20, 20, .8);
+  padding: 30px 0;
+  border-right: 5px solid rgba(30, 30, 30, .8);
+  color: #ffffff;
+}
 
-    /*=====LEFT-SIDE=====*/
-    /*Style for the left side of the form*/
-    .info {
-      width: 30%;
-      background: rgba(20, 20, 20, .8);
-      padding: 30px 0;
-      border-right: 5px solid rgba(30, 30, 30, .8);
-      color: #ffffff;
-    }
+/*=====ICON=====*/
+/*style for the icon on the left side of the page*/
+.icon {
+  font-size: 8em;
+  padding: 20px 0;
+  color: rgba(10, 180, 180, 1);
+}
 
-    /*=====ICON=====*/
-    /*style for the icon on the left side of the page*/
-    .icon {
-      font-size: 8em;
-      padding: 20px 0;
-      color: rgba(10, 180, 180, 1);
-    }
+/*=====RIGHT-SIDE=====*/
+/*style for the right side of the form*/
+.signupForm {
+  width: 100%;
+  background: rgba(20, 40, 40, .8);
+}
 
-    /*=====RIGHT-SIDE=====*/
-    /*style for the right side of the form*/
-    .signupForm {
-      width: 100%;
-      background: rgba(20, 40, 40, .8);
-    }
+/*=====LABEL=====*/
+/*google label styles*/
+.form__label {
+  /*position label elements*/
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  padding: 0 .20rem;
+  background-color:
+    /*#fff;*/
+    transparent;
+  color: var(--input-color);
+  font-size: var(--normal-font-size);
+  transition: .1s;
+}
 
-    /*=====INPUT=====*/
+/*=====INPUT=====*/
+/*class used by element type text*/
+.inputFields {
+  margin: 15px 0;
+  font-size: 12px;
+  padding: 5px;
+  margin: 10px;
+  width: 210px;
+  border: 1px solid rgba(10, 180, 180, 1);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  background: rgba(20, 20, 20, .2);
+  color: #ffffff;
+  outline: none;
+}
 
-    /*class used by element type text*/
-    .inputFields {
-      margin: 15px 0;
-      font-size: 12px;
-      padding: 5px;
-      margin: 10px;
-      width: 210px;
-      border: 1px solid rgba(10, 180, 180, 1);
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      background: rgba(20, 20, 20, .2);
-      color: #ffffff;
-      outline: none;
+/*google style text input*/
+input [type="text"] {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  left: 0;
+  width: 210px;
+  height: 100%;
+  font-size: var(--normal-font-size);
+  border: 1px solid var(--border-color);
+  border-radius: .5rem;
+  outline: none;
+  padding: 1rem;
+  background: none;
+  z-index: 1;
+}
 
-    }
+/*Input focus move up label*/
+.form__input:focus+.form__label {
+  top: -.5rem;
+  left: .8rem;
+  color: var(--border-color);
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 10;
+}
 
-    /*Erase bullet point (list)*/
-    .noBullet {
-      list-style-type: none;
-      padding: 0;
-    }
+/*Input focus sticky top label*/
+.form__input:not(:placeholder-shown).form__input:not(:focus)+.form__label {
+  top: -.5rem;
+  left: .8rem;
+  font-size: var(--small-font-size);
+  font-weight: 500;
+  z-index: 10;
+}
 
-    /*=====BUTTON=====*/
+/*Input focus*/
+.form__input:focus {
+  border: 1.5px solid var(--first-color);
+}
 
-    /*style for both buttons*/
-    #join-btn {
-      border: 1px solid rgba(10, 180, 180, 1);
-      background: rgba(20, 20, 20, .6);
-      font-size: 18px;
-      color: #ffffff;
-      margin-top: 10px;
-      padding: 10px 30px;
-      cursor: pointer;
-      transition: .4s;
-    }
+/*======LIST======*/
+/*Erase bullet point (list)*/
+.noBullet {
+  list-style-type: none;
+  padding: 0;
+}
 
-    /*style for button's event hover*/
-    #join-btn:hover {
-      background: rgba(20, 20, 20, .8);
-      padding: 15px 60px;
-      /*increases button's padding/size*/
-    }
+/*=====BUTTON=====*/
+/*style for both buttons*/
+#join-btn {
+  border: 1px solid rgba(10, 180, 180, 1);
+  background: rgba(20, 20, 20, .6);
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: .4s;
+}
 
-    /*=====TIME=====*/
-    /*style*/
-    input[type="time"] {
-      background: rgba(20, 20, 20, .2);
-      border: 1px solid rgba(10, 180, 180, 1);
-      padding: 5px;
-      border-top: none;
-      border-left: none;
-      border-right: none;
-      width: 210px;
-      margin: 15px 0;
-      color: #ffffff;
-      cursor: pointer;
-    }
+/*style for button's event hover*/
+#join-btn:hover {
+  background: rgba(20, 20, 20, .8);
+  padding: 15px 60px;
+  /*increases button's padding/size*/
+}
 
-    input[type="date"] {
-      cursor: pointer;
-    }
+/*=====TIME=====*/
+/*style*/
+input[type="time"] {
+  background: rgba(20, 20, 20, .2);
+  border: 1px solid rgba(10, 180, 180, 1);
+  padding: 5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  width: 210px;
+  margin: 15px 0;
+  color: #ffffff;
+  cursor: pointer;
+}
 
-    /*=====TEXTAREA=====*/
-    textarea {
-      align: center;
-      overflow: scroll;
-      resize: both;
-      padding: 10px 0;
-      margin: 10px;
-      width: 100%;
-      height: 100px;
-    }
+input[type="date"] {
+  cursor: pointer;
+}
 
-    /*=====IMG=====*/
-    /*style for image make img responsive*/
-    img {
-      width: 100%;
-    }
+/*=====TEXTAREA=====*/
+textarea {
+  align: center;
+  overflow: scroll;
+  resize: both;
+  padding: 10px 0;
+  margin: 10px;
+  width: 100%;
+  height: 200px;
+}
 
-    /*=====CHECKBOX-STYLE=====*/
-    input[type="checkbox"] {
-      appearance: none;
-      -webkit-appearance: none;
-      height: 18px;
-      width: 18px;
-      background-color: #d5d5d5;
-      border-radius: 5px;
-      cursor: pointer;
-      display:inline-block ;
-      outline: none;
-    }
-
-    input[type="checkbox"]::after {
-      font-family: "Font Awesome 5 Free";
-      font-weight: 900;
-      content: "\f00c";
-      color: white;
-      size: 20px;
-      display: none;
-    }
-
-    input[type="checkbox"]:hover {
-      background-color: #a5a5a5;
-    }
-
-    input[type="checkbox"]:checked {
-      background-color: rgb(185, 121, 24);
-    }
-
-    input[type="checkbox"]:checked::after {
-      display:inline-block;
-    }
+/*=====IMG=====*/
+/*style for image make img responsive*/
+img {
+  width: 100%;
+}
