@@ -1,164 +1,115 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html PUBLIC>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html;" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style/Style_v2.css">
 
-  <title>BITACORA</title>
-
+  <title>PASSWORD</title>
+  
+  <style>
+        #ultimo + div{
+            visibility: hidden;
+        }
+    </style>
 </head>
+
 
 <body>
   <div class="signupSection">
 
     <div class="info">
-      <h2>Secretaria de Seguridad P&uacuteblica</h2>
+      <h2>Secretaria De Seguridad Publica</h2>
       <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
 
-      <img src="PCE.png">
-      <br><br>
-      <h3>Polic&iacutea Cibern&eacutetica del Estado</h3>
-
+      <img src="img/PCE.png" width="200" height="230">
+      <br><br><br>
+      <p>Policia cibernetica del estado</p>
       <br><br><br><br>
-      <a href="../Departamentos.html" id="center-btn">
+      <!--<a href="inex.html" id="center-btn">
         <input type="button" id="join-btn" value="Salir" onClick="llamarApiPOST()" />
-      </a>
-
+      </a>-->
       <br>
+      <!--closes div info-->
     </div>
+
+
     <div class="signupform">
-      <h3>Bit&aacutecora</h3>
+      <br><br><br><br><br>
+      <h4>BITACORA DE ACTIVIDADES</h4><br>
 
+      <br><br>
       <ul class="noBullet">
-        <li hidden>
-          <label for="Folio"></label>
-          <input type="text" class="inputFields" id="ID" name="ID" placeholder="ID" value="1" readonly>
-        </li>
-        <h4>Fecha Inicio</h4>
-        <li>
-          <input type="date" id="FECHA" name="FECHA" class="inputFields" placeholder="Fecha">
-        </li>
-        <li>
-          <input type="time" name="Hr" id="Hr" class="inputfields" placeholder="Ingresar Hora">
-        </li>
-        <li>
-          <input type="text" id="folioPce" name="folioPce" class="inputFields" placeholder="folio Pce" required></input>
-        </li>
-        <li>
-          <input type="text" id="folio911" name="folio911" class="inputFields" placeholder="folio 911"></input>
-        </li>
-        <li>
-          <h4>
-            <p>Facebook</p>
-          </h4>
-          <label for="facebook">Si</label>
-          <input type="radio" name="face" id="face" value="si" onchange="seleccion(1)">
 
-          <label for="facebookNo">No</label>
-          <input type="radio" name="face" id="face" value="No" onchange="seleccion(2)">
-        </li>
-        <li>
-          <input type="text" name="atendio" id="atendio" class="inputFields" value="Yeimi Anahí" placeholder="" readonly>
-        </li>
-        <li>
-          <select name="municipio">
-            <option value="0">Selecciona Municipio</option>
-            <option value="1">Abasolo</option>
-            <option value="2">Acuña</option>
-            <option value="3">Allende</option>
-            <option value="4">Arteaga</option>
-            <option value="5">Candela</option>
-            <option value="6">Castaños</option>
-            <option value="7">Cuatro ciénegas</option>
-            <option value="8">Escobedo</option>
-            <option value="9">Francisco I. Madero</option>
-            <option value="10">Frontera</option>
-            <option value="11">General Cepeda</option>
-            <option value="12">Guerrero</option>
-            <option value="13">Hidalgo</option>
-            <option value="14">Jiménez</option>
-            <option value="15">Juárez</option>
-            <option value="16">Lamadrid</option>
-            <option value="17">Matamoros</option>
-            <option value="18">Monclova</option>
-            <option value="19">Morelos</option>
-            <option value="20">Múzquiz</option>
-            <option value="21">Nadadores</option>
-            <option value="22">Nava</option>
-            <option value="23">Ocampo</option>
-            <option value="24">Parras</option>
-            <option value="25">Piedras Negras</option>
-            <option value="26">Progreso</option>
-            <option value="27">Ramos Arizpe</option>
-            <option value="28">Sabinas</option>
-            <option value="29">Sacramento</option>
-            <option value="30">Saltillo</option>
-            <option value="31">San Buenaventura</option>
-            <option value="32">San Juan de Sabinas</option>
-            <option value="33">San Pedro</option>
-            <option value="34">Sierra Mojada</option>
-            <option value="35">Torreón</option>
-            <option value="36">Viesca</option>
-            <option value="37">Villa Unión</option>
-            <option value="38">Zaragoza</option>
-            <label for="otro">Otros</label>
-            <input type="otro" name="otro" id="otro" placeholder="Otro" class="inputFields">
-          </select>
-        </li>
-        <select name="incidente">
-          <option value="1">Seleccione Incidente</option>
-          <option value="2">Ciberextorsion</option>
-          <option value="3">Ciberfraude</option>
-        </select>
-        <li>
-          <input type="afectado" id="afectado" placeholder="Nombre de afectado" class="inputFields">
-        </li>
-        <li>
-          <input type="number" name="telVictima" id="telVictima" placeholder="Telefono Victima/Lada" class="inputFields">
-        </li>
-        <li>
-          <input type="number" name="telExtorsion" id="telExtorsion" placeholder="Telefono de Extorcion" class="inputFields">
-        </li>
-        <li>
-          <input type="text" name="ctaDep" id="ctaDep" placeholder="Cuenta Deposito" class="inputFields">
-        </li>
-        <li>
-          <input type="text" name="Monto" id="Monto" placeholder="Monto" class="inputFields">
-        </li>
+        <!--Edit this, table's makin a mess-->
+        <form name="login">
 
-        <li>
-          <input type="checkbox" name="" value="">
-          <label for="">Atendido</label>
-        </li>
+          <h4>(INGRESA TUS DATOS)</h4>
+          
+          
+          <!--User-->
+          <div class="form_div">
+            <input class="form_input" type="text" name="usuario" value="usuario" placeholder="Ingresa Usuario">
+          </div><br>
 
-        <li>
-          <select class="" name="Se_Atendio">
-            <option value="0">Seleccione Tipo Atención</option>
-            <option value="1">Llamada Telefónica</option>
-            <option value="2">WhatsApp</option>
-          </select>
-        </li>
+          <!--password-->
+          <div class="form_div">
+            <input class="form_input" type="password" name="password" value="password" placeholder="Ingresa Contraseña">
+          </div>
+          
 
-        <li>
-          <textarea type="descripcion" name="descripcion" id="descripcion" placeholder="Descripción" class=""></textarea>
-        </li>
+          <br>
+          <input type="button" id="join-btn" value="Entrar" onClick="Login()" />
 
-        <li>
-          <textarea name="resultados" id="resultados" placeholder="Resultados" class=""></textarea>
-        </li>
-
-        <li id="center-btn">
-          <input type="submit" name="join" id="join-btn" value="Guardar" onClick="llamarApiPOST()" />
-        </li>
-
+        </form>
       </ul>
     </div>
+    <!--closes div signupsection-->
   </div>
+  <script language="JavaScript">
+    function Login() {
+      var done = 0;
+      var usuario = document.login.usuario.value;
+      var password = document.login.password.value;
 
+      if (usuario == "usuario1" && password == "1") {
+        window.location ="bitacoraPrueba.html";
+      }
+      if (usuario == "atenea01" && password == "1302") {
+        window.location = "bitacoraPam.html";
+      }
+
+      if (usuario == "orlando90" && password == "barajas1990") {
+        window.location = "bitacoraOrla.html";
+      }
+      if (usuario == "marifer" && password == "marifer299") {
+        window.location = "bitacoraFer.html";
+      }
+
+      if (usuario == "bot1" && password == "bot1") {
+        window.location = "bitacoraEle.html";
+      }
+      if (usuario == "idk-117" && password == "M@Rt3s") {
+        window.location ="bitacoraShava.html";
+      }
+      if (usuario == "AnahiPG" && password == "Perez1996") {
+        window.location = "bitacoraAnahi.html";
+      }
+
+      if (usuario == "jonas" && password == "sukel023") {
+        window.location ="bitacoraJonas.html";
+      }
+    }
+  </script>
+
+  <script language="Javascript">
+    /* Begin
+    document.oncontextmenu = function(){return false}
+    // End */
+  </script>
+
+<div id="ultimo"></div>
 </body>
 
 </html>
